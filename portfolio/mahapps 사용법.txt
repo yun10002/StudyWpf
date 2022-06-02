@@ -1,0 +1,22 @@
+1. 솔루션이름 우클릭->누겟 패키지 관리->찾아보기->mahapps 검색->
+ MahApps.Metro & MahApps.Metro.Resources & MahApps.Metro.IconPacks 설치
+
+2. Apps.xaml에서 <ResourceDictionary> ~ </ResourceDictionary> 부분 변경
+
+<ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+        <!-- Theme setting -->
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+
+3. MainWindow.xaml.cs에서 MetroWindow 상속 (Window인가 Windows를 MetroWindow로 변경)
+밑줄뜨면 alt+엔터 -> 엔터  -> using MahApps.Metro.Controls 추가됨
+
+4. MainWindow.xaml에서 <Window> ~ </Window> 부분 Window를  mah:MetroWindow로 변경,
+ xmlns:mc 밑줄에 
+xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" 
+xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks" 
+추가
