@@ -2,9 +2,15 @@
 
 ## Naver 영화검색
 - WPF(.NET Framework 4.7.2 / C#)
- - MahApps.Metro Design
+ - MahApps.Metro Metro UI/Morden UI Design
+ - Newtonsoft.Json
  - Naver OpenAPI
- - Youtube OpenAPI
- - Json datahandling
- 
-![네이버영화검색앱](https://raw.githubusercontent.com/yun10002/StudyWpf/main/capture/lalaland.png)
+ - Google.Apis.Youtube.v3
+ - CefSharp WebBrowser component 
+ - EntityFramework
+
+![NaverMovieFinder](https://github.com/yun10002/StudyWpf/blob/main/capture/lalaland.png?raw=true)
+실행화면
+
+![YoutubePlay](https://github.com/yun10002/StudyWpf/blob/main/capture/youtube_trailer.png?raw=true)
+검색영화 예고편 보기 실행화면
