@@ -9,10 +9,8 @@
  - CefSharp WebBrowser component 
  - EntityFramework
 
-
 ![NaverMovieFinder](https://github.com/yun10002/StudyWpf/blob/main/capture/lalaland.png?raw=true)
 실행화면
-
-
+<br/><br/>
 ![YoutubePlay](https://github.com/yun10002/StudyWpf/blob/main/capture/youtube_trailer.png?raw=true)
 검색영화 예고편 보기 실행화면
