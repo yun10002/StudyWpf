@@ -7,4 +7,4 @@
  - Youtube OpenAPI
  - Json datahandling
  
-![네이버영화](https://github.com/yun10002/StudyWpf/tree/main/capture/interstellar.png)
+![네이버영화검색앱](https://raw.githubusercontent.com/yun10002/StudyWpf/main/capture/lalaland.png)
