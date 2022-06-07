@@ -28,3 +28,11 @@
  - MahApps.Metro Metro UI/Morden UI
  - Newtonsoft.Json
  - Naver OpenAPI
+
+<br/>
+
+![NaverNewsSearch](https://github.com/yun10002/StudyWpf/blob/main/capture/naver_newsSearch.PNG?raw=true)
+실행화면
+
+![NaverNewsSearch]()
+뉴스 선택시 실행화면
