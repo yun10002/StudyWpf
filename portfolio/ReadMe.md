@@ -32,7 +32,6 @@
 <br/>
 
 ![NaverNewsSearch](https://github.com/yun10002/StudyWpf/blob/main/capture/naver_newsSearch.PNG?raw=true)
-
 실행화면
 
 ![NaverNewsSearch](https://github.com/yun10002/StudyWpf/blob/main/capture/naver_newSearch2.PNG?raw=true)
