@@ -4,7 +4,7 @@
 
 ## Naver 영화검색
 - WPF(.NET Framework 4.7.2 / C#)
- - MahApps.Metro Metro UI/Morden UI Design
+ - MahApps.Metro Metro UI/Modern UI Design
  - Newtonsoft.Json
  - Naver OpenAPI
  - Google.Apis.Youtube.v3
@@ -25,14 +25,13 @@
 
 ## Naver 뉴스검색
 - WPF(.NET Framework 4.7.2 / C#)
- - MahApps.Metro Metro UI/Morden UI
+ - MahApps.Metro Metro UI/Modern UI
  - Newtonsoft.Json
  - Naver OpenAPI
 
 <br/>
 
-![NaverNewsSearch](https://github.com/yun10002/StudyWpf/blob/main/capture/naver_newsSearch.PNG?raw=true)
-실행화면
+![NaverNewsSearch](https://github.com/yun10002/StudyWpf/blob/main/capture/naver_newsSearch.PNG?raw=true)<br>실행화면
 
 ![NaverNewsSearch](https://github.com/yun10002/StudyWpf/blob/main/capture/naver_newSearch2.PNG?raw=true)
 뉴스 선택시 실행화면
