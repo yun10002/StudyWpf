@@ -28,3 +28,5 @@ C# WPF 학습 리포지토리
 
 ## Day6
 - Caliburn.Micro MVVM 학습
+- Bougus 패키지 학습
+- SmartHome 앱 만들기
