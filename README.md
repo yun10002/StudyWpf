@@ -25,3 +25,6 @@ C# WPF 학습 리포지토리
 
 ## Day5
 - MVVM 패턴 학습
+
+## Day6
+- Caliburn.Micro MVVM 학습
