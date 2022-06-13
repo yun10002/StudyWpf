@@ -51,7 +51,7 @@
 
 <br/>
 
-![SmartHomeMonitoring]()
+![SmartHomeMonitoring](https://github.com/yun10002/StudyWpf/blob/main/capture/DB_monitoring.png?raw=true)
 DB모니터링 화면
 
 ![RealtimeView](https://raw.githubusercontent.com/yun10002/StudyWpf/main/capture/history.png)
