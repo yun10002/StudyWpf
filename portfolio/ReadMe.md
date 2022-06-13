@@ -4,12 +4,12 @@
 
 ## Naver 영화검색
 - WPF(.NET Framework 4.7.2 / C#)
- - MahApps.Metro Metro UI/Modern UI Design
- - Newtonsoft.Json
- - Naver OpenAPI
- - Google.Apis.Youtube.v3
- - CefSharp WebBrowser component 
- - Entity Framework DB
+  - MahApps.Metro Metro UI/Modern UI Design
+  - Newtonsoft.Json
+  - Naver OpenAPI
+  - Google.Apis.Youtube.v3
+  - CefSharp WebBrowser component 
+  - Entity Framework DB
 
 <br/>
 
@@ -25,9 +25,9 @@
 
 ## Naver 뉴스검색
 - WPF(.NET Framework 4.7.2 / C#)
- - MahApps.Metro Metro UI/Modern UI
- - Newtonsoft.Json
- - Naver OpenAPI
+  - MahApps.Metro Metro UI/Modern UI
+  - Newtonsoft.Json
+  - Naver OpenAPI
 
 <br/>
 
