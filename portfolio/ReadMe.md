@@ -35,3 +35,27 @@
 
 ![NaverNewsSearch](https://github.com/yun10002/StudyWpf/blob/main/capture/naver_newSearch2.PNG?raw=true)
 뉴스 선택시 실행화면
+
+<br/>
+
+## SmartHome 모니터링앱
+[이전](https://github/yun10002/StudyWpf)
+- WPF(.NET Framework 4.7.2 / C#)
+  - MahApps.Metro
+  - Caliburn.Micro
+  - LiveCharts
+  - OxyPlot.Wpf
+  - M2Mqtt
+  - Newtonsoft.Json
+  - SQLServer DB
+
+<br/>
+
+![SmartHomeMonitoring]()
+DB모니터링 화면
+
+![RealtimeView](https://raw.githubusercontent.com/yun10002/StudyWpf/main/capture/history.png)
+실시간 센서 디스플레이
+
+![HistoryView](https://raw.githubusercontent.com/yun10002/StudyWpf/main/capture/realtime.png)
+센서값 시각화 및 프로그램 정보창
