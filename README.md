@@ -17,11 +17,11 @@ C# WPF 학습 리포지토리
 ## Day3
 - 디자인
 - 리소스
-- 네이버 영화검색 앱 만들기 ( [클릭](https://github.com/yun10002/StudyWpf/tree/main/portfolio) )
+- 네이버 영화검색 앱 만들기 ( [클릭](https://github.com/yun10002/StudyWpf/tree/main/portfolio#naver-영화검색) )
 
 ## Day4
-- 네이버 영화검색 앱 마무리 ( [클릭](https://github.com/yun10002/StudyWpf/tree/main/portfolio) )
-- 네이버 뉴스검색
+- 네이버 영화검색 앱 마무리 ( [클릭](https://github.com/yun10002/StudyWpf/tree/main/portfolio#naver-영화검색) )
+- 네이버 뉴스검색 ( [클릭](https://github.com/yun10002/StudyWpf/tree/main/portfolio#naver-뉴스검색) )
 
 ## Day5
 - MVVM 패턴 학습
@@ -32,7 +32,7 @@ C# WPF 학습 리포지토리
 - SmartHome 앱 만들기
 
 ## Day7~8
-- SmartHome 시스템 만들기 ([클릭])
+- SmartHome 시스템 만들기 ( [클릭](( [클릭](https://github.com/yun10002/StudyWpf/tree/main/portfolio#-모니터링앱) )))
   - MQTT Publish 프로그램
   - MQTT Broker 설정
   - MQTT Monitoring 프로그램
