@@ -1,9 +1,12 @@
 ﻿using Caliburn.Micro;
 using OxyPlot;
+using OxyPlot.Legends;
+using OxyPlot.Series;
 using System;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows;
+using System.Windows.Media;
 using WPFSmartHomeMonitoringApp.Helpers;
 using WPFSmartHomeMonitoringApp.Models;
 
@@ -20,7 +23,7 @@ namespace WPFSmartHomeMonitoringApp.ViewModels
         //InitEndDate
         //TotalCount
         //SearchIoTData()
-        //SmartHomeModel
+        //HistoryModel
 
         private BindableCollection<DivisionModel> divisions;
         private DivisionModel selectedDivision;
@@ -29,7 +32,7 @@ namespace WPFSmartHomeMonitoringApp.ViewModels
         private string endDate;
         private string initEndDate;
         private int totalCount;
-        private PlotModel smartHomeModel; //OxyPlot
+        private PlotModel historyModel; //OxyPlot 220613, 윤진. smartHomeModel -> historyModel 변경
 
         public BindableCollection<DivisionModel> Divisions
         {
@@ -94,13 +97,13 @@ namespace WPFSmartHomeMonitoringApp.ViewModels
                 NotifyOfPropertyChange(() => TotalCount);
             }
         }
-        public PlotModel SmartHomeModel
+        public PlotModel HistoryModel //220613, 윤진. smartHomeModel -> historyModel 변경
         {
-            get => smartHomeModel;
+            get => historyModel;
             set
             {
-                smartHomeModel = value;
-                NotifyOfPropertyChange(() => SmartHomeModel);
+                historyModel = value;
+                NotifyOfPropertyChange(() => HistoryModel);
             }
         }
         public HistoryViewModel()
@@ -146,7 +149,7 @@ namespace WPFSmartHomeMonitoringApp.ViewModels
 
             using(SqlConnection conn= new SqlConnection(Commons.CONNSTRING))
             {
-                string strQuery = @"SELECT Id, CurrTime, Temp, Humid 
+                string strQuery = @"SELECT Id, DevId, CurrTime, Temp, Humid 
                                      FROM TblSmartHome
                                     WHERE DevId = @DevId
                                       AND CurrTime BETWEEN @StartDate AND @EndDate
@@ -165,14 +168,55 @@ namespace WPFSmartHomeMonitoringApp.ViewModels
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    var i = 0;
+                    int i = 0;
+
+                    PlotModel tmp = new PlotModel
+                    {
+                        Title = $"{selectedDivision.DivisionVal} Histories",
+                        Subtitle = "using OxyPlot"
+                    }; //임시 플롯모델
+
+                    var l = new Legend //범례, OxyPlot.Wpf > LegendsDemo 참조
+                    {
+                        LegendBorder = OxyColors.Black,
+                        LegendBackground = OxyColor.FromAColor(200, OxyColors.White),
+                        LegendPosition = LegendPosition.RightTop,
+                        LegendPlacement = LegendPlacement.Inside
+                    };
+                    tmp.Legends.Add(l);
+
+                    LineSeries seriesTemp = new LineSeries 
+                    { 
+                        Color = OxyColor.FromRgb(255, 100, 100), 
+                        Title = "Temperature", MarkerType=MarkerType.Circle 
+                    }; //온도값을 라인차트로 담을 객체
+
+                    LineSeries seriesHumid = new LineSeries
+                    {
+                        Color = OxyColor.FromRgb(150, 150, 255),
+                        Title = "Humidity",
+                        MarkerType = MarkerType.Triangle
+                    };
+
                     while (reader.Read())
                     {
-                        var temp = reader["Temp"];
+                        //var model = new SmartHomeModel();
+                        //model.DevId = reader["DevId"].ToString();
+                        //model.CurrTime = DateTime.Parse(reader["CurrTime"].ToString());
+                        //model.Temp = Convert.ToDouble(reader["Temp"]);
+                        //model.Humid = Convert.ToDouble(reader["Humid"]);
+
+                        //var temp = reader["Temp"];
                         //Temp, Humid 차트데이터 생성
+                        seriesTemp.Points.Add(new DataPoint(i, Convert.ToDouble(reader["Temp"])));
+                        seriesHumid.Points.Add(new DataPoint(i, Convert.ToDouble(reader["Humid"])));
                         i++;
                     }
-                    TotalCount = i;
+                    TotalCount = i; //검색한 데이터 총 개수
+
+                    tmp.Series.Add(seriesTemp);
+                    tmp.Series.Add(seriesHumid);
+                    HistoryModel = tmp;
                 }
                 catch(Exception ex)
                 {

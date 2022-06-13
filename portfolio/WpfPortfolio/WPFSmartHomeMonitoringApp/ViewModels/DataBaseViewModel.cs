@@ -8,6 +8,7 @@ using System.Text;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 using WPFSmartHomeMonitoringApp.Helpers;
+using WPFSmartHomeMonitoringApp.Models;
 
 namespace WPFSmartHomeMonitoringApp.ViewModels
 {
@@ -151,19 +152,25 @@ namespace WPFSmartHomeMonitoringApp.ViewModels
         private void SetDataBase(string message)
         {
             var currDatas = JsonConvert.DeserializeObject<Dictionary<string, string>>(message);
+            var model = new SmartHomeModel();
 
             Debug.WriteLine(currDatas);
+
+            model.DevId = currDatas["DevId"];
+            model.CurrTime = DateTime.Parse(currDatas["CurrTime"]);
+            model.Temp = double.Parse(currDatas["Temp"]);
+            model.Humid = double.Parse(currDatas["Humid"]);
 
             using (SqlConnection conn = new SqlConnection(Commons.CONNSTRING))
             {
                 conn.Open();
                 string strInQuery = @"INSERT INTO TblSmartHome
-                                           (Devid
+                                           (DevId
                                            ,CurrTime
                                            ,Temp
                                            ,Humid)
                                       VALUES
-                                           (@Devid
+                                           (@DevId
                                            ,@CurrTime
                                            ,@Temp
                                            ,@Humid)";
@@ -171,13 +178,13 @@ namespace WPFSmartHomeMonitoringApp.ViewModels
                 try 
                 {
                     SqlCommand cmd = new SqlCommand(strInQuery, conn);
-                    SqlParameter parmDevId = new SqlParameter("@Devid", currDatas["DevId"]);
+                    SqlParameter parmDevId = new SqlParameter("@DevId", model.DevId);
                     cmd.Parameters.Add(parmDevId);
-                    SqlParameter parmCurrTime = new SqlParameter("@CurrTime", DateTime.Parse(currDatas["CurrTime"])); //날짜형으로 변환 필요
+                    SqlParameter parmCurrTime = new SqlParameter("@CurrTime", model.CurrTime); //날짜형으로 변환 필요
                     cmd.Parameters.Add(parmCurrTime);
-                    SqlParameter parmTemp = new SqlParameter("@Temp", currDatas["Temp"]);
+                    SqlParameter parmTemp = new SqlParameter("@Temp", model.Temp);
                     cmd.Parameters.Add(parmTemp);
-                    SqlParameter parmHumid = new SqlParameter("@Humid", currDatas["Humid"]);
+                    SqlParameter parmHumid = new SqlParameter("@Humid", model.Humid);
                     cmd.Parameters.Add(parmHumid);
 
                     if (cmd.ExecuteNonQuery() == 1)
