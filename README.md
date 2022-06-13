@@ -32,7 +32,7 @@ C# WPF 학습 리포지토리
 - SmartHome 앱 만들기
 
 ## Day7~8
-- SmartHome 시스템 만들기 ( [클릭](https://github.com/yun10002/StudyWpf/tree/main/portfolio#-모니터링앱) )
+- SmartHome 시스템 만들기 ( [클릭](https://github.com/yun10002/StudyWpf/tree/main/portfolio#smarthome-모니터링앱) )
   - MQTT Publish 프로그램
   - MQTT Broker 설정
   - MQTT Monitoring 프로그램
