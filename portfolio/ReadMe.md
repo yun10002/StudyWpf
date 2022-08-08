@@ -39,7 +39,7 @@
 <br/>
 
 ## SmartHome 모니터링앱
-[이전](https://github/yun10002/StudyWpf)
+[이전](https://github.com/yun10002/StudyWpf)
 - WPF(.NET Framework 4.7.2 / C#)
   - MahApps.Metro
   - Caliburn.Micro
